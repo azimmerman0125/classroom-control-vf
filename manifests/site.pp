@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   notify { "Congratulations... we have made a change to puppet": }
-  exec { "cowsay 'Welcome to ${::fwdn}!' > /etc/motd":
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     path => '/usr/local/bin',
     creates => '/etc/modtd',
   }
