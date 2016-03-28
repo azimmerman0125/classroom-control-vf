@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   notify { "Congratulations... we have made a change to puppet": }
-  
+  }  
   file { '/etc/motd': 
         ensure  => file,
         owner   => 'root',
