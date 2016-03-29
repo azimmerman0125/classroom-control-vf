@@ -1,5 +1,5 @@
 class nginx {
-  package {'ngix':
+  package {'nginx':
     ensure => present,
   }
   
