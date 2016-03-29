@@ -29,7 +29,7 @@ class nginx {
     owner => 'root',
     group => 'root',
     mode => '0644',
-    souce => 'puppet:///modules/ngix/nginx.conf',
+    souce => 'puppet:///modules/nginx/nginx.conf',
     require => Package['nginx'],
     notify => Service['nginx'],
   }
@@ -39,7 +39,7 @@ class nginx {
     owner => 'root',
     group => 'root',
     mode => '0644',
-    souce => 'puppet:///modules/ngix/index.html',
+    souce => 'puppet:///modules/nginx/index.html',
     require => Package['nginx'],
     notify => Service['nginx'],
   }
