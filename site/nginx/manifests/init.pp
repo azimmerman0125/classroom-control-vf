@@ -44,7 +44,7 @@ class nginx {
     notify => Service['nginx'],
   }
   
-  file {'/etc/nginx/default.d/default.conf',
+  file {'/etc/nginx/default.d/default.conf':
     ensure => file,
     owner => 'root',
     group => 'root',
