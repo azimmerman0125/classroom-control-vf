@@ -10,3 +10,5 @@ fi
 
 # User specific aliases and functions
 alias blah = `echo "blah"`
+
+cowsay 'HI THERE!'
