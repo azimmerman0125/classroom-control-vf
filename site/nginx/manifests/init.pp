@@ -17,7 +17,7 @@ class nginx {
     mode => '0755',
   }  
   
-  file {'/etc/nginx/default.d':
+  file {'/etc/nginx/conf.d':
     ensure => directory,
     owner => 'root',
     group => 'root',
@@ -57,7 +57,7 @@ class nginx {
     notify => Service['nginx'],
   }
   
-  file {'/etc/nginx/default.d/default.conf':
+  file {'/etc/nginx/conf.d/default.conf':
     ensure => file,
     owner => 'root',
     group => 'root',
