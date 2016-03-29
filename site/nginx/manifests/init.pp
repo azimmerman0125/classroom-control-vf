@@ -17,6 +17,13 @@ class nginx {
     mode => '0755',
   }  
   
+  file {'/etc/nginx/default.d':
+    ensure => directory,
+    owner => 'root',
+    group => 'root',
+    mode => '0755',
+  }  
+  
   file {'/etc/nginx/nginx.conf':
     ensure => file,
     owner => 'root',
@@ -35,6 +42,15 @@ class nginx {
     souce => 'puppet:///modules/ngix/index.html',
     require => Package['nginx'],
     notify => Service['nginx'],
+  }
+  
+  file {'/etc/nginx/default.d/default.conf',
+    ensure => file,
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
+    source => 'puppet:///modules/nginx/default.conf',
+    notify => Service['nginx']
   }
 
   service {'nginx': 
