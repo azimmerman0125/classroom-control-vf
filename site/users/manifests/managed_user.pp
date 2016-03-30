@@ -1,13 +1,14 @@
-define users::managed_user ( 
+#Defined Resource users::managed_user
+define users::managed_user (
   $home = "/home/${title}",
   $group = $title,
 ){
   user { $title:
-    ensure => present, 
+    ensure => present,
   }
-  file { "/home/${title}": 
-    ensure => directory, 
-    owner => $title, 
-    group => $group,
-  } 
+  file { "/home/${title}":
+    ensure => directory,
+    owner  => $title,
+    group  => $group,
+  }
 }

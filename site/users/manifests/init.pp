@@ -1,6 +1,7 @@
+#Defined users class
 class users {
-  user { 'fundamentals': 
+  user { 'fundamentals':
     ensure => present,
-    shell => '/sbin/nologin',
+    shell  => '/sbin/nologin',
   }
 }
