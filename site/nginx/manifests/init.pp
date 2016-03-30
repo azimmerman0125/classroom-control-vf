@@ -8,7 +8,8 @@ class nginx {
       $nginx_document_root = '/var/www'
       $nginx_home_dir = '/etc/nginx'
       $nginx_config_dir = $nginx_home_dir
-      $nginx_logs_dir = '/var/log/nginx'
+      $nginx_pid_dir = '/var/run'
+      $nginx_log_dir = '/var/log/nginx'
       $nginx_service_runasuser = 'nginx'
 
     }
@@ -19,7 +20,8 @@ class nginx {
       $nginx_document_root = '/var/www'
       $nginx_home_dir = '/etc/nginx'
       $nginx_config_dir = $nginx_home_dir
-      $nginx_logs_dir = '/var/log/nginx'
+      $nginx_pid_dir = '/var/run'
+      $nginx_log_dir = '/var/log/nginx'
       $nginx_service_runasuser = 'www-data'
     }
 
@@ -30,7 +32,8 @@ class nginx {
       $nginx_home_dir = 'C:/ProgramData/nginx'
       $nginx_document_root = "${nginx_home_dir}/html"
       $nginx_config_dir = $nginx_home_dir
-      $nginx_logs_dir = "${nginx_home_dir}/logs"
+      $nginx_pid_dir = $nginx_home_dir
+      $nginx_log_dir = "${nginx_home_dir}/logs"
       $nginx_service_runasuser = 'nobody'
 
     }
