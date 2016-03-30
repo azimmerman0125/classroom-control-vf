@@ -1,6 +1,5 @@
 
 define users::managed_user (
-  $user,
   $shell = '/bin/bash',
   $home = "/home/${user}",
   $group = $user,
