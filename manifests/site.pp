@@ -57,7 +57,7 @@ node default {
   
   if $::virtual != "physical" {
     $upvirt = capitalize ($::virtual)
-    notify {"Virtual machine Detected: ${upvirt}"}
+    notify {"Virtual machine Detected: ${upvirt}": }
   }
   
 }
