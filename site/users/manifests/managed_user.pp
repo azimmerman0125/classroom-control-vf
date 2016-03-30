@@ -13,7 +13,7 @@ define users::managed_user (
     ensure => present,
     shell => $shell,
     home => $home,
-    group => $user,
+    group => $group,
   }
   file { "${home}/.ssh":
     ensure => directory,
