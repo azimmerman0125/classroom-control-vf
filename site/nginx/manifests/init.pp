@@ -3,7 +3,7 @@ class nginx {
   case $::osfamily {
     'debian': {
       $nginx_package_name = 'nginx'
-      $nginx_ower = 'root'
+      $nginx_owner = 'root'
       $nginx_group = 'root'
       $nginx_document_root = '/var/www'
       $nginx_home_dir = '/etc/nginx'
@@ -15,7 +15,7 @@ class nginx {
     }
     'redhat': {
       $nginx_package_name = 'nginx'
-      $nginx_ower = 'root'
+      $nginx_owner = 'root'
       $nginx_group = 'root'
       $nginx_document_root = '/var/www'
       $nginx_home_dir = '/etc/nginx'
@@ -27,7 +27,7 @@ class nginx {
 
     'windows': {
       $nginx_package_name = 'nginx-service'
-      $nginx_ower = 'Administrator'
+      $nginx_owner = 'Administrator'
       $nginx_group = 'Administrators'
       $nginx_home_dir = 'C:/ProgramData/nginx'
       $nginx_document_root = "${nginx_home_dir}/html"
