@@ -10,14 +10,6 @@ class nginx {
     ensure => present,
   }
   
-  file {'/etc':
-    ensure => directory,
-  }
-  
-    file {'/etc/nginx':
-    ensure => directory,
-  }  
-  
   file {'/etc/nginx/conf.d':
     ensure => directory,
   }  
@@ -28,9 +20,6 @@ class nginx {
     notify => Service['nginx'],
   }
 
-    file {'/var':
-    ensure => directory,
-  }  
     file {'/var/www':
     ensure => directory,
   }    
