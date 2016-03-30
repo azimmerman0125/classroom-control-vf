@@ -54,4 +54,10 @@ node default {
     ensure => present,
     ip => '127.0.0.1',
   }
+  
+  if $::virtual != "physical" {
+    upvirt = capitalize ($::virtual)
+    notify ("Virtual machine Detected: ${upvirt}")
+  }
+  
 }
