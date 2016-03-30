@@ -1,7 +1,7 @@
 
 define users::managed_user (
   $shell = '/bin/bash',
-  $home = "/home/${user}",
+  $home = "/home/${title}",
   $group = $user,
   ) {
   $user = $title
