@@ -77,11 +77,11 @@ class nginx (
     notify  => Service['nginx'],
   }
 
-    file {'/var/www':
+    file {"${nginx_document_root}":
     ensure => directory,
   }
 
-  file {'/var/www/index.html':
+  file { "${nginx_document_root}/index.html":
     source  => 'puppet:///modules/nginx/index.html',
     require => Package['nginx'],
     notify  => Service['nginx'],
