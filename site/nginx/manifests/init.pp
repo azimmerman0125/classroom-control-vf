@@ -4,7 +4,7 @@ class nginx (
   $nginx_package_name = $nginx::params::nginx_package_name,
   $nginx_owner = $nginx::params::nginx_owner,
   $nginx_group = $nginx::params::nginx_group,
-  $nginx_document_root = $nginx::params:nginx_document_root,
+  $nginx_document_root = $nginx::params::nginx_document_root,
   $nginx_home_dir = $nginx::params::nginx_home_dir,
   $nginx_config_dir = $nginx::params::nginx_config_dir,
   $nginx_pid_dir = $nginx::params::nginx_pid_dir,
