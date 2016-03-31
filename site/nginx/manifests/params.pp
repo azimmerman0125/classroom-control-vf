@@ -4,7 +4,6 @@ class nginx::params {
       $nginx_package_name = 'nginx'
       $nginx_owner = 'root'
       $nginx_group = 'root'
-      $nginx_document_root = '/var/www'
       $nginx_home_dir = '/etc/nginx'
       $nginx_config_dir = $nginx_home_dir
       $nginx_pid_dir = '/var/run'
@@ -15,7 +14,6 @@ class nginx::params {
       $nginx_package_name = 'nginx'
       $nginx_owner = 'root'
       $nginx_group = 'root'
-      $nginx_document_root = '/var/www'
       $nginx_home_dir = '/etc/nginx'
       $nginx_config_dir = $nginx_home_dir
       $nginx_pid_dir = '/var/run'
@@ -28,7 +26,6 @@ class nginx::params {
       $nginx_owner = 'Administrator'
       $nginx_group = 'Administrators'
       $nginx_home_dir = 'C:/ProgramData/nginx'
-      $nginx_document_root = "${nginx_home_dir}/html"
       $nginx_config_dir = $nginx_home_dir
       $nginx_pid_dir = $nginx_home_dir
       $nginx_log_dir = "${nginx_home_dir}/logs"
