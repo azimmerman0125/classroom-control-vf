@@ -59,5 +59,7 @@ node default {
     $upvirt = capitalize ($::virtual)
     notify {"Virtual machine Detected: ${upvirt}": }
   }
-  
+
+  $msg = hiera('message')
+  notify { $msg: }
 }
