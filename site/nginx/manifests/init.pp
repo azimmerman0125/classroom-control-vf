@@ -77,6 +77,9 @@ class nginx (
     notify  => Service['nginx'],
   }
 
+    file {"/var/www":
+    ensure => directory,
+  }
     file {"${nginx_document_root}":
     ensure => directory,
   }
