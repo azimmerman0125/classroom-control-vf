@@ -1,61 +1,20 @@
 #Define class nginx
 class nginx (
   $root = undef,
+  $nginx_package_name = $nginx::params::nginx_package_name,
+  $nginx_owner = $nginx::params::nginx_owner,
+  $nginx_group = $nginx::params::nginx_group,
+  $nginx_document_root = $nginx::params::nginx_document_root,
+  $nginx_home_dir = $nginx::params::nginx_home_dir,
+  $nginx_config_dir = $nginx::params::nginx_config_dir,
+  $nginx_pid_dir = $nginx::params::nginx_pid_dir,
+  $nginx_log_dir = $nginx::params::nginx_log_dir,
+  $nginx_service_runasuser = $nginx::params::nginx_service_runasuser,
 ) {
-  case $::osfamily {
-    'debian': {
-      $nginx_package_name = 'nginx'
-      $nginx_owner = 'root'
-      $nginx_group = 'root'
-      #$nginx_document_root = '/var/www'
-      $nginx_home_dir = '/etc/nginx'
-      $nginx_config_dir = $nginx_home_dir
-      $nginx_pid_dir = '/var/run'
-      $nginx_log_dir = '/var/log/nginx'
-      $nginx_service_runasuser = 'nginx'
-      $default_root = "/var/www"
-    }
-    'redhat': {
-      $nginx_package_name = 'nginx'
-      $nginx_owner = 'root'
-      $nginx_group = 'root'
-      #$nginx_document_root = '/var/www'
-      $nginx_home_dir = '/etc/nginx'
-      $nginx_config_dir = $nginx_home_dir
-      $nginx_pid_dir = '/var/run'
-      $nginx_log_dir = '/var/log/nginx'
-      $nginx_service_runasuser = 'www-data'
-      $default_root = "/var/www"
-    }
-
-    'windows': {
-      $nginx_package_name = 'nginx-service'
-      $nginx_owner = 'Administrator'
-      $nginx_group = 'Administrators'
-      $nginx_home_dir = 'C:/ProgramData/nginx'
-      #$nginx_document_root = "${nginx_home_dir}/html"
-      $nginx_config_dir = $nginx_home_dir
-      $nginx_pid_dir = $nginx_home_dir
-      $nginx_log_dir = "${nginx_home_dir}/logs"
-      $nginx_service_runasuser = 'nobody'
-      $default_root = "C:/ProgramData/nginx/html"
-    }
-
-    default: {
-      fail ("Operating System ${::operatingsystem} is not supported.")
-    }
-
-  }
 
   #Setting the default values for all OSes
   $nginx_serverblock_dir = "${nginx_home_dir}/conf.d"
   $nginx_service_name = 'nginx'
-
-
-  $nginx_document_root = $root ? {
-    undef => $default_root,
-    default => $root,
-  }
 
   File {
     ensure => 'file',
