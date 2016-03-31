@@ -52,7 +52,7 @@ class nginx (
   $nginx_service_name = 'nginx'
 
 
-  $nginx_document_root = $nginx_document_root ? {
+  $nginx_document_root = $root ? {
     undef => $default_root,
     default => $root,
   }
