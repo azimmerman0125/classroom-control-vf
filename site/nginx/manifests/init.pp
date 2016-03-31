@@ -36,12 +36,9 @@ class nginx (
     notify  => Service['nginx'],
   }
 
-    file {"/var/www":
+   file {"${nginx_document_root}":
     ensure => directory,
-  }
-    file {"${nginx_document_root}":
-    ensure => directory,
-  }
+   }
 
   file { "${nginx_document_root}/index.html":
     source  => 'puppet:///modules/nginx/index.html',
