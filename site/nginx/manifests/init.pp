@@ -10,7 +10,7 @@ class nginx (
   $nginx_pid_dir = $nginx::params::nginx_pid_dir,
   $nginx_log_dir = $nginx::params::nginx_log_dir,
   $nginx_service_runasuser = $nginx::params::nginx_service_runasuser,
-) {
+) inherits nginx::params {
 
   #Setting the default values for all OSes
   $nginx_serverblock_dir = "${nginx_home_dir}/conf.d"
